@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import EditPost from "./edit";
 
 export default function PostDetail() {
   const { id } = useParams();
@@ -14,11 +15,20 @@ export default function PostDetail() {
   if (!post) return <p>Loading...</p>;
 
   return (
-    <div style={{ padding: 30 }}>
-      <Link to="/">⬅ Kembali</Link>
+    <div className="max-w-4xl mx-auto p-8">
+      <div className="flex gap-4 mb-6">
+        <Link to={`/edit/${post.id}`}>
+          <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">Edit</button>
+        </Link>
+        <Link to="/">
+          <button className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">⬅ Kembali</button>
+        </Link>
+      </div>
 
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <article className="bg-white p-6 rounded-lg shadow">
+        <h1 className="text-4xl font-bold mb-4 text-gray-800">{post.title}</h1>
+        <p className="text-gray-700 leading-relaxed text-lg">{post.content}</p>
+      </article>
     </div>
   );
 }
