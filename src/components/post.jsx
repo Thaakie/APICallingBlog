@@ -6,7 +6,7 @@ export default function PostDetail() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    fetch(`http://localhost:5000/posts/${id}`)
       .then((res) => res.json())
       .then((data) => setPost(data));
   }, [id]);
@@ -16,8 +16,9 @@ export default function PostDetail() {
   return (
     <div style={{ padding: 30 }}>
       <Link to="/">⬅ Kembali</Link>
+
       <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <p>{post.content}</p>
     </div>
   );
 }
