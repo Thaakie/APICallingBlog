@@ -9,7 +9,7 @@ export default function Write() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/posts", {
+    await fetch("https://api-calling-blog-backend.vercel.app/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

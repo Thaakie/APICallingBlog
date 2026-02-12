@@ -10,7 +10,7 @@ export default function EditPost() {
 
   // ambil data awal
   useEffect(() => {
-    fetch(`http://localhost:5000/post-by-id/${id}`)
+    fetch(`https://api-calling-blog-backend.vercel.app/post-by-id/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.title);
@@ -21,7 +21,7 @@ export default function EditPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(`http://localhost:5000/posts/${id}`, {
+    await fetch(`https://api-calling-blog-backend.vercel.app/posts/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, content }),

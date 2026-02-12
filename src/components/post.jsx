@@ -7,7 +7,7 @@ export default function PostDetail() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/posts/${id}`)
+    fetch(`https://api-calling-blog-backend.vercel.app/${id}`)
       .then((res) => res.json())
       .then((data) => setPost(data));
   }, [id]);

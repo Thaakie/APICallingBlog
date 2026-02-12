@@ -7,14 +7,14 @@ import EditPost from "./components/edit";
 
 function App() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<PostDetail />} />
         <Route path="/write" element={<Write />} />
         <Route path="/edit/:id" element={<EditPost />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

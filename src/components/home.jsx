@@ -5,7 +5,7 @@ export default function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/posts")
+    fetch("https://api-calling-blog-backend.vercel.app/posts")
       .then((res) => res.json())
       .then((data) => setPosts(data));
   }, []);
@@ -19,7 +19,7 @@ export default function Home() {
         </a>
       </div>
 
-      <p className="text-gray-600 mb-8">Semua artikel dari database MySQL 😎</p>
+      <p className="text-gray-600 mb-8">Semua artikel dari database MySQL btw</p>
 
       <div className="space-y-6">
         {posts.map((post) => (
